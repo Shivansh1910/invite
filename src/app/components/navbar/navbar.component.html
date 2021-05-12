@@ -1,0 +1,143 @@
+<nav
+  class="navbar navbar-main navbar-expand-lg navbar-dark headroom"
+  id="navbar-main"
+>
+  <div class="container">
+    <a class="navbar-brand mr-lg-5" href="https://ecell.in">
+      <img src="https://www.ecell.in/2020/images/Website%20Logo.png" style="height: 50px;" id="brand-logo"/>
+      <!-- | The Entrepreneurship Cell -->
+    </a>
+    <button
+      aria-controls="navbar_global"
+      aria-label="Toggle navigation"
+      class="navbar-toggler"
+      [attr.aria-expanded]="!isCollapsed"
+      (click)="isCollapsed = !isCollapsed"
+      id="navbar_global"
+      type="button"
+    >
+      <span class="navbar-toggler-icon"> </span>
+    </button>
+    <div
+      class="navbar-collapse"
+      [isAnimated]="true"
+      [collapse]="isCollapsed"
+      id="navbar_global"
+    >
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a [routerLink]="['/index']">
+              <img src="https://www.ecell.in/2020/images/Website%20Logo.png" />
+            </a>
+          </div>
+          <div class="col-6 collapse-close">
+            <button
+              aria-controls="navbar_global"
+              aria-label="Toggle navigation"
+              class="navbar-toggler"
+              [attr.aria-expanded]="!isCollapsed"
+              (click)="isCollapsed = !isCollapsed"
+              id="navbar_global"
+              type="button"
+            >
+              <span> </span> <span> </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto" *ngIf="mobileView()">
+        <li class="nav-item dropdown" dropdown>
+          <a
+            class="nav-link"
+            data-toggle="dropdown"
+            href="javascript:;"
+            dropdownToggle
+            role="button"
+          >
+            <i class="ni ni-single-copy-04 d-lg-none"> </i>
+            <span class="nav-link-inner--text"> Initiatives </span>
+          </a>
+          <div
+            aria-labelledby="navbarDropdownMenuLink"
+            class="dropdown-menu"
+            *dropdownMenu
+          >
+            <a class="dropdown-item" href="https://ecell.in/esummit">
+              <i class="ni ni-tie-bow text-warning"> </i> E-Summit
+            </a>
+            <a class="dropdown-item" href="https://ecell.in/enbclub">
+              <i class="ni ni-money-coins text-success"> </i> Entrepreneurship and Buisness Club
+            </a>
+            <a class="dropdown-item" href="https://ecell.in/eureka">
+              <i class="ni ni-align-center text-info"> </i> Eureka!
+            </a>
+            <a class="dropdown-item" href="https://ecell.in/nec">
+              <i class="ni ni-chart-bar-32 text-yellow"> </i> National Entrepreneurship Competition
+            </a>
+            <a class="dropdown-item" href="https://ecell.in/fincof">
+              <i class="ni ni-square-pin text-danger"> </i> Freelance, Intern and Co-founder Program
+            </a>
+            <a class="dropdown-item" href="https://ecell.in/eureka_junior">
+              <i class="ni ni-planet text-purple"> </i> Eureka Junior
+            </a>
+            <a class="dropdown-item" href="https://ecell.in/enspace">
+              <i class="ni ni-box-2 text-pink"> </i> En-Space
+            </a>
+            <a class="dropdown-item" href="https://ecell.in/ssp">
+              <i class="ni ni-bag-17 text-primary"> </i> Startup Services Portal
+            </a>
+            <a class="dropdown-item" href="https://ecell.in/social">
+              <i class="ni ni-circle-08 text-info"> </i> Social Initiatives
+            </a>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto" *ngIf="!mobileView()">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link"
+            data-toggle="dropdown"
+            href="https://ecell.injavascript:;"
+            role="button"
+          >
+            <i class="ni ni-single-copy-04 d-lg-none"> </i>
+            <span class="nav-link-inner--text"> Initiatives </span>
+          </a>
+          <div
+            aria-labelledby="navbarDropdownMenuLink"
+            class="dropdown-menu"
+          >
+          <a class="dropdown-item" href="https://ecell.in/esummit">
+            <i class="ni ni-tie-bow text-warning"> </i> E-Summit
+          </a>
+          <a class="dropdown-item" href="https://ecell.in/enbclub">
+            <i class="ni ni-money-coins text-success"> </i> Entrepreneurship and Buisness Club
+          </a>
+          <a class="dropdown-item" href="https://ecell.in/eureka">
+            <i class="ni ni-align-center text-info"> </i> Eureka!
+          </a>
+          <a class="dropdown-item" href="https://ecell.in/nec">
+            <i class="ni ni-chart-bar-32 text-yellow"> </i> National Entrepreneurship Competition
+          </a>
+          <a class="dropdown-item" href="https://ecell.in/fincof">
+            <i class="ni ni-square-pin text-danger"> </i> Freelance, Intern and Co-founder Program
+          </a>
+          <a class="dropdown-item" href="https://ecell.in/eureka_junior">
+            <i class="ni ni-planet text-purple"> </i> Eureka Junior
+          </a>
+          <a class="dropdown-item" href="https://ecell.in/enspace">
+            <i class="ni ni-box-2 text-pink"> </i> En-Space
+          </a>
+          <a class="dropdown-item" href="https://ecell.in/ssp">
+            <i class="ni ni-bag-17 text-primary"> </i> Startup Services Portal
+          </a>
+          <a class="dropdown-item" href="https://ecell.in/social">
+            <i class="ni ni-circle-08 text-info"> </i> Social Initiatives
+          </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,45 @@
+<div class="cd-section" id="teams">
+    <div class="team-2">
+      <div *ngFor="let portfolio of portfolios" class="container py-5">
+        <div class="row">
+          <div class="col-md-8 mx-auto text-center mb-5">
+            <h3 class="display-3">{{ portfolio.name }}</h3>
+            <!-- <h4 class="lead">
+              some text could go here
+            </h4> -->
+          </div>
+        </div>
+        <div class="row">
+          <div *ngFor="let manager of portfolio.managers" class="col-md-6 col-lg-4">
+            <div
+              class="card card-profile"
+              data-image="img-rounded"
+            >
+              <div class="card-avatar">
+                <a href="javascript:;">
+                  <img class="img" src={{manager.image}} onError="this.src='assets/img/logo_ecell.png'" />
+                </a>
+              </div>
+              <div class="card-body pt-0">
+                <div class="text-center">
+                  <h5 class="h4 font-weight-700">
+                    {{manager.name}}<span class="font-weight-light">
+                    </span>
+                  </h5>
+                  <div >
+                    <a target="__blank" class="text-dark" href="mailto:{{manager.email}}">{{manager.email}}</a>
+                  </div>
+                  <div >
+                    <a target="__blank" class="text-dark" href="tel:{{manager.phone_number}}">{{manager.phone_number}}</a>
+                  </div>
+                  <div >
+                    <a target="__blank" class="text-link" href="{{manager.field}}">{{split(manager.field, manager.name)}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

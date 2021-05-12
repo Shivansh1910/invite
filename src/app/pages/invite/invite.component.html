@@ -1,0 +1,231 @@
+<div
+  aria-hidden="true"
+  aria-labelledby="modal-form"
+  bsModal
+  class="modal fade"
+  #modalform="bs-modal"
+  id="modal-form"
+  role="dialog"
+  tabindex="-1"
+  >
+  <div
+      class="modal-dialog modal-dialog-centered modal-sm"
+      role="document"
+  >
+      <div class="modal-content">
+      <div class="modal-body p-0">
+          <div class="card bg-secondary shadow border-0 mb-0">
+          <!-- <div class="card-header bg-white pb-5">
+              <div class="text-muted text-center mb-3">
+              <small> Sign in with </small>
+              </div>
+          </div> -->
+          <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-4">
+              <small> {{name}} let us remind you at </small>
+              </div>
+              <form role="form">
+              <div class="form-group mb-3">
+                  <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text">
+                      <i class="ni ni-email-83"> </i>
+                      </span>
+                  </div>
+                  <input
+                      name="em" [(ngModel)]="email"
+                      class="form-control" (blur)="focus = false" (focus)="focus = true"
+                      placeholder="Email"
+                      type="email"
+                      required
+                  />
+                  </div>
+              </div>
+              <div class="form-group" [ngClass]="{ 'focused': focus15 === true }">
+                  <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text">
+                      <i class="ni ni-lock-circle-open"> </i>
+                      </span>
+                  </div>
+                  <input
+                      name="mob" [(ngModel)]="mob"
+                      class="form-control" (blur)="focus15 = false" (focus)="focus15 = true"
+                      placeholder="Phone Number"
+                      type="number"
+                      required
+                  />
+                  </div>
+              </div>
+              <div class="text-center">
+                <p class="text-danger">
+                  {{showmsg}}
+                </p>
+                  <button
+                  class="btn btn-primary my-4"
+                  type="button"
+                  (click)="update()"
+                  >
+                  Submit
+                  </button>
+              </div>
+              </form>
+          </div>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+<div
+  aria-hidden="true"
+  aria-labelledby="modal-default"
+  bsModal
+  class="modal fade"
+  #modaldefault="bs-modal"
+  id="modal-default"
+  role="dialog"
+  tabindex="-1"
+>
+  <div
+    class="modal-dialog modal- modal-dialog-centered modal-"
+    role="document"
+  >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="modal-title-default">
+          Lucky Draw (Scratch Card)
+        </h6>
+        <!-- <button
+          aria-label="Close"
+          class="close"
+          data-dismiss="modal"
+          (click)="modaldefault.hide()"
+          type="button"
+        >
+          <span aria-hidden="true"> X </span>
+        </button> -->
+      </div>
+      <!-- <div id="modal-body-inner" class="modal-body-inner">
+        
+      </div> -->
+      <div id="js--sc--container" class="text-center">
+        <div class="cardamountcss text-center"><div class="won-amnt">{{lucky}}</div><div class="won-text">Your lucky draw ID</div></div>
+      </div>
+      <div class="modal-footer">
+        <!-- <button class="btn btn-primary" type="button" (click)="ScratchCardAgain()">
+          Scratch Again
+        </button> -->
+        <button
+          class="btn btn-link ml-auto"
+          data-dismiss="modal"
+          type="button"
+          (click)="modaldefault.hide()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrapper">
+    <section class="section-profile-cover section-shaped my-0">
+      <img
+        class="bg-image"
+        src="assets/img/bg1.jpeg"
+        style="width: 100%;"
+      />
+  
+      <div class="separator separator-bottom separator-skew">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-secondary" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </section>
+    <section class="section bg-secondary">
+      <div class="container">
+        <div class="card card-profile shadow mt--300">
+          <div class="px-4">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <a href="javascript:;">
+                    <img
+                      class="rounded-circle"
+                      src="https://dummyimage.com/400x400/{{colour}}/fff&text={{text_img}}"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div
+                class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center"
+              >
+                <div class="card-profile-actions py-4 mt-lg-0">
+                    <a class="btn btn-sm btn-info mr-4" href="team"> 
+                        Team
+                    </a>
+                    <!-- <a data-target="#modal-form"
+                    (click)="modalform.show()" class="btn btn-sm btn-default float-right" href="#">
+                        RSVP
+                    </a> -->
+                    <a
+                      class="btn btn-sm btn-default text-white float-right"
+                      data-target="#modal-default"
+                      (click)="modaldefault.show()"
+                      type="button"
+                    >
+                      Lucky Draw
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-4 order-lg-1">
+                <div
+                  class="card-profile-stats d-flex justify-content-center"
+                >
+                  <div>
+                    <span class="heading"> IITB </span>
+                    <span class="description"> College </span>
+                  </div>
+                  <div>
+                    <span class="heading"> {{batch}} </span>
+                    <span class="description"> Year of Joining </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-5">
+              <h3>
+                {{name}}<span class="font-weight-light"></span>
+              </h3>
+              <!-- <div class="h6 font-weight-300">
+                {{roll_no}} 
+              </div> -->
+              <div class="h6">
+                <i>"The secret of getting ahead is getting started"</i>
+                <br>-Mark Twain
+                <!-- {{position}} at {{company}}  -->
+                <!-- <br> -->
+                <!-- Lucky Draw Number: {{lucky}} -->
+              </div>
+              <!-- <div class="mt-4"> -->
+                <!-- The Entrepreneurship Cell of IIT Bombay invites you to attend the freshie orientation  -->
+              <!-- </div> -->
+            </div> 
+            <div class="text-center" style="padding-bottom: 2rem;">
+              <div class="row justify-content-center">
+                <div class="col-lg-9">
+                  <p>
+                    <br>
+                    Begin your journey and get to know what  Entrepreneurship Cell has in store for you. We cordially invite you to the E-Cell's UG freshers' orientation on <b>2nd December 5:30 pm</b>. Lots of Freebies and prizes are waiting for you! Lucky draw results to be announced in the orientation!
+                  </p>
+                  <a data-target="#modal-form"
+                  (click)="modalform.show()"
+                  type="button" class="btn btn-secondary"> Let us remind you </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
